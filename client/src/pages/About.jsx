@@ -5,12 +5,10 @@ import { Box, Typography } from '@mui/material'
 
 
 
-
 const About = () => {
   return (
     <Box sx={{bgcolor:"black"}}>
     <Layout>
-      
         <Box sx={{
           my: 15,
           textAlign: "center",
@@ -18,12 +16,23 @@ const About = () => {
           "& h4":{
             fontWeight: 'bold',
             my:2,
-            fontSize: "2rem"
+            fontSize: "3rem"
           },
           "& p":{
             margin: "10px",
             color: "green",
             textAlign: 'justify',
+            fontSize:"1.3rem"
+          },
+          "& ul":{
+            color:"green",
+            fontSize:"1.3rem",
+            margin:"20px",
+          },
+          "& h1":{
+            // display:"flex",
+            // justifyContent:'left',
+            color:"#ff004e",
           },
           "@media (max-width:600px)": {
             mt: 0,
@@ -35,11 +44,21 @@ const About = () => {
           <Typography variant="h4" color="#ff004e">
             Welcome to the Slay_Ctf
           </Typography>
+          <Typography variant="h8" color="#ff004e">
+            by Z3R0_LOGON <span style={{color:'white'}}>x</span> CSE dept. JGEC
+          </Typography>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi soluta cupiditate sed, placeat similique numquam fuga laudantium sit ab excepturi amet obcaecati sunt magni libero? Eveniet incidunt minima sit velit voluptatibus magni libero aperiam unde ratione! Veritatis voluptates molestiae ea tenetur facere? Impedit commodi distinctio obcaecati. Mollitia ipsam nam quis sequi aliquam, eaque ea tempora delectus a officiis quasi et nisi placeat quisquam maxime nostrum adipisci, doloremque cum debitis inventore repudiandae quia eius! Iure, soluta. Dolor hic deserunt earum? Nihil tenetur voluptatem magni minima accusamus, nulla, harum itaque similique hic nemo nesciunt quidem ut. Neque aliquid ipsum repellendus pariatur ex!
-          </p>
+          SLAY CTF is a hybrid Jeopardy-style contest where participants can test their cybersecurity skills and compete for prizes.
+          Z3R0_L0G0N is the cyber security club of JGEC. We are trying to build a community in North Bengal to learn from others and share our knowledge. We hope the participants will be encourage to learn more on this field through the CTF.</p>
           <br/>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor ab modi, est consequuntur laborum culpa. Unde excepturi doloribus est, odit sequi vel vitae odio assumenda eius, neque deleniti? Molestiae temporibus veritatis dolore voluptatem voluptas quisquam magni nesciunt, eligendi odit qui nisi aspernatur quod dignissimos libero laboriosam animi neque adipisci eius reprehenderit delectus rem fugiat? Doloribus aliquam earum sit quasi voluptate, dignissimos corporis magnam ad possimus enim facere, fugit animi nostrum eius sequi nulla doloremque saepe illo illum distinctio error ipsam, assumenda delectus similique. Nesciunt, quidem perspiciatis? Saepe doloribus, voluptates expedita sequi, quod, ad deleniti dicta quibusdam molestiae ex excepturi suscipit.</p>
+          <h1>RULES :</h1>
+          <ul>
+              <li style={{textAlign:"left"}}>Participants are allowed to use any tool on the challenges (not on the website)</li>
+              <li style={{textAlign:"left"}}>Flag sharing is prohibited (if caught then we will directly disqualify them)</li>
+              <li style={{textAlign:"left"}}> Time duration : 2.30 hour  </li>
+        </ul>
+        <br></br>
+        <p>For further information follow us on the Social Media Handles Given Below</p>
 
         </Box>
         
