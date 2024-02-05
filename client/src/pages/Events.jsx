@@ -57,7 +57,7 @@ const Events = () => {
     <div className="tl-bg" ></div>
     
     <div className="tl-year">
-      <p className="f2 heading--sanSerif">Validictory<br/>Mentions</p>
+      <p className="f2 heading--sanSerif">Validictory</p>
     </div>
 
     <div className="tl-content">
