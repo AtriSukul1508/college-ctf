@@ -1,14 +1,16 @@
 import React from 'react'
 import Layout from '../components/Layout/Layout'
 import { Box, Typography } from '@mui/material'
+import ParticlesBackground from '../components/Layout/ParticlesBackground'
 
 
 
 
 const About = () => {
   return (
-    <Box sx={{bgcolor:"black"}}>
+    // <Box sx={{bgcolor:"black"}}>
     <Layout>
+        <ParticlesBackground/>
         <Box sx={{
           my: 15,
           textAlign: "center",
@@ -63,7 +65,7 @@ const About = () => {
         </Box>
         
     </Layout>
-    </Box>
+    // </Box>
   )
 }
 

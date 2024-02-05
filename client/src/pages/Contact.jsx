@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import Layout from '../components/Layout/Layout'
-
-
+import ParticlesBackground from "../components/Layout/ParticlesBackground";
+import { MaximizeRounded } from "@mui/icons-material";
 
 
 export default function ContactForm() {
@@ -16,13 +16,13 @@ export default function ContactForm() {
 
   return (
     <Layout>
+      <ParticlesBackground/>
     <Box
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         height: "100vh",
-        backgroundColor:"black",
       }}
     >
       <Box

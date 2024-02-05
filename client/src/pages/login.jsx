@@ -4,10 +4,11 @@ import bg from '../assets/background.png';
 import { useState } from 'react';
 import { useSignup } from '../hooks/useSignup';
 import ErrorIcon from '@mui/icons-material/Error';
-import { Lock, Person, Email, Call, Paid } from '@mui/icons-material';
+import { Lock, Person, Email, Call, Paid, School } from '@mui/icons-material';
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { useLogin } from '../hooks/useLogin';
 import qr from '../assets/qr.jpeg'
+import ParticlesBackground from '../components/Layout/ParticlesBackground';
 
 export default function Login() {
   // Login Data 
@@ -19,6 +20,7 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
+  const [college,setCollege] = useState('');
   const [transactionid, setTransactionID] = useState('');
   const [workshop, setDropdownData] = useState(undefined);
   const { signup, error, isLoading } = useSignup();
@@ -47,11 +49,13 @@ export default function Login() {
   const CreateAccount = async (event) => {
     event.preventDefault();
     console.log('wrok',workshop)
-    await signup(name, email, phone, password,workshop, transactionid);
+    await signup(name, email, phone, password,college,workshop, transactionid);
   }
   return (
     <Layout>
+    <ParticlesBackground/>
       <div className='body'>
+      
         <div className="main">
           <input type="checkbox" id="chk" aria-hidden="true" />
           {/* For Sign Up Part */}
@@ -93,6 +97,10 @@ export default function Login() {
                       id="pw_icon"
                     />
                   )}
+                </div>
+                <div className='user_college_field info_field'>
+                  <School className='info_icon' />
+                  <input type='text' autoComplete='off' className='input' placeholder='Enter your College Name' name='college' onChange={(e) => setCollege(e.target.value)} value={college} />
                 </div>
                 <div className="workshop_field info_field">
                   <select required name='workshop' onChange={(e)=>setDropdownData(e.target.value)}>
@@ -178,7 +186,7 @@ export default function Login() {
         </div>
       </div>
       {/* For background image */}
-      <div
+      {/* <div
         className="bg-wrap"
         style={{
           position: "fixed",
@@ -191,7 +199,7 @@ export default function Login() {
           backgroundSize: "cover",
           zIndex: "-10900",
         }}
-      ></div>
+      ></div> */}
     </Layout>
   )
 }

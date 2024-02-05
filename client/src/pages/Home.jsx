@@ -3,12 +3,14 @@ import Layout from '../components/Layout/Layout'
 import { Link } from 'react-router-dom'
 import Banner from '../assets/SLAY.png'
 import { motion } from "framer-motion"
+import ParticlesBackground from '../components/Layout/ParticlesBackground'
 
 import '../styles/Homestyle.css'
 const Home = () => {
   return (
     <Layout>
-        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration :1,ease:'easeOut'}} className='home' style={{backgroundColor: "black"}}>
+      <ParticlesBackground/>
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration :1,ease:'easeOut'}} className='home'>
           <motion.div initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
@@ -25,8 +27,8 @@ const Home = () => {
             <span className="type"><span>Slay_CTF</span></span>
             <p>Calling all codebreakers and puzzle masters! Ready to test your wit? No experience needed, just bring your curiosity and problem-solving skills. Decipher cryptic clues, unlock hidden messages, and capture the flag! Unleash your inner cyber sleuth!
             </p>
-            <Link to='/login'>
-              <button>
+            <Link to='/events'>
+              <button className='event-button'>
                 Register Now
               </button>
             </Link>
