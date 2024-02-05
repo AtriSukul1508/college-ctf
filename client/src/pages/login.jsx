@@ -105,7 +105,7 @@ export default function Login() {
                 <div className="workshop_field info_field">
                   <select required name='workshop' onChange={(e)=>setDropdownData(e.target.value)}>
                     <option disabled selected>Which one do you want to choose ?</option>
-                    {['CTF','CTF+Workshop'].map((option, index) => {
+                    {['CTF Only','CTF+Workshop'].map((option, index) => {
                       return (
                         <option key={index}>
                           {option}

@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
     workshop: {
         type:String,
         required:true,
-        enum:['CTF','CTF+Workshop']
+        enum:['CTF Only','CTF+Workshop']
     },
     transactionid: {
         type: String,
@@ -55,7 +55,7 @@ const userSchema = new mongoose.Schema({
 //static signup method
 
 userSchema.statics.signup = async function (name, email, phone, password,college,workshop,transactionid ) {
-    if (!name || !email || !phone || !password || !workshop || !college || (workshop.length >3 && !transactionid)) {
+    if (!name || !email || !phone || !password || !workshop || !college || (workshop.length >8 && !transactionid)) {
         throw Error('All fields must be filled');
     }
     if (!validator.isEmail(email)) {
