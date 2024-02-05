@@ -18,10 +18,10 @@ const loginUser = async (req, res) => {
 }
 
 const signupUser = async (req, res) => {
-    const { name, email, phone, password, transactionid  } = req.body;
+    const { name, email, phone, password,workshop, transactionid  } = req.body;
     try {
 
-        const user = await UserModel.signup(name, email, phone, password, transactionid );
+        const user = await UserModel.signup(name, email, phone, password,workshop, transactionid );
 
         //create token
         const token = await user.generateAuthToken(user._id, user.email);

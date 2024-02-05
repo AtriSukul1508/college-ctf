@@ -7,7 +7,7 @@ import ErrorIcon from '@mui/icons-material/Error';
 import { Lock, Person, Email, Call, Paid } from '@mui/icons-material';
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { useLogin } from '../hooks/useLogin';
-
+import qr from '../assets/qr.jpeg'
 
 export default function Login() {
   // Login Data 
@@ -20,6 +20,7 @@ export default function Login() {
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [transactionid, setTransactionID] = useState('');
+  const [workshop, setDropdownData] = useState(undefined);
   const { signup, error, isLoading } = useSignup();
 
   // Password Visibility Toggle Function
@@ -45,7 +46,8 @@ export default function Login() {
   // Sign Up Data Post
   const CreateAccount = async (event) => {
     event.preventDefault();
-    await signup(name, email, phone, password, transactionid);
+    console.log('wrok',workshop)
+    await signup(name, email, phone, password,workshop, transactionid);
   }
   return (
     <Layout>
@@ -92,19 +94,38 @@ export default function Login() {
                     />
                   )}
                 </div>
+                <div className="workshop_field info_field">
+                  <select required name='workshop' onChange={(e)=>setDropdownData(e.target.value)}>
+                    <option disabled selected>Which one do you want to choose ?</option>
+                    {['CTF','CTF+Workshop'].map((option, index) => {
+                      return (
+                        <option key={index}>
+                          {option}
+                        </option>
+                      );
+                    })}
+                  </select>
+
+                </div>
+                {workshop==='CTF+Workshop' && 
+                <>
+                <div className='qr_field info_field' style={{marginTop:'20px',display:'flex',flexDirection:'column',justifyContent:'center'}}>
+                <label style={{color:'white',fontSize:'.8rem'}}>Please scan the qr code to pay (250 Rs):</label>
+                    <img src={qr} width='250' height='250' className='qr_img'/>
+                </div>
                 <div className='transactionid_field info_field'>
                   <Paid className='info_icon' />
-                  <input type='text' className='input' autoComplete='off' placeholder='Transaction ID' name='transactionid' id='transaction_id' onChange={(e) => setTransactionID(e.target.value)} value={transactionid} />
-                </div>
+                  <input type='text' className='input' required={workshop==='CTF+Workshop'?true:false} autoComplete='off' placeholder='Transaction ID' name='transactionid' id='transaction_id' onChange={(e) => setTransactionID(e.target.value)} value={transactionid} />
+                </div></>}
 
               </div>
               {error && <div className="error"><ErrorIcon fontSize='small' /> {error}</div>}
               <div className='btns_submit'>
-                <input type='submit' name='signup__btn' className='button' onClick={CreateAccount} value='Sign Up'  />
+                <input type='submit' name='signup__btn' className='button' onClick={CreateAccount} value='Sign Up' />
               </div>
             </form>
           </div>
-          
+
           {/* For Login Part */}
 
           <div className="login">
@@ -145,7 +166,7 @@ export default function Login() {
                 id="login__btn"
                 onClick={verifyAndPostData}
                 value="Sign In"
-                // disabled={is_Loading}
+              // disabled={is_Loading}
               />
             </form>
 

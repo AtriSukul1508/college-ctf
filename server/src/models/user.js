@@ -10,7 +10,8 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        lowercase:true
     },
     phone: {
         type: String,
@@ -21,10 +22,19 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    workshop: {
+        type:String,
+        required:true,
+        enum:['CTF','CTF+Workshop']
+    },
     transactionid: {
         type: String,
-        required: true,
+        default:""
     },
+    // challenges: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref:'Challenge'
+    // },
     tokens: [{
         token: {
             type: String,
@@ -40,8 +50,8 @@ const userSchema = new mongoose.Schema({
 
 //static signup method
 
-userSchema.statics.signup = async function (name, email, phone, password, transactionid ) {
-    if (!name || !email || !phone || !password || !transactionid) {
+userSchema.statics.signup = async function (name, email, phone, password,workshop,transactionid ) {
+    if (!name || !email || !phone || !password || !workshop || (workshop.length >3 && !transactionid)) {
         throw Error('All fields must be filled');
     }
     if (!validator.isEmail(email)) {
@@ -61,7 +71,7 @@ userSchema.statics.signup = async function (name, email, phone, password, transa
     const salt = await bcrypt.genSalt(10);
     const hash_password = await bcrypt.hash(password, salt);
     // const hash_cpassword = await bcrypt.hash(cpassword, salt);
-    const user = new this({ name, email, phone, password: hash_password,transactionid});
+    const user = new this({ name, email, phone, password: hash_password,workshop,transactionid});
     const userdata = await user.save();
 
     return userdata;
