@@ -120,7 +120,7 @@
 	}
 
 input:not([type="submit"]){
-	width: 20vw;
+	width: 250px;
 	padding: 10px 10px 10px 30px;
 	outline: none;
 	border: none;
@@ -129,7 +129,7 @@ input:not([type="submit"]){
 	/* margin-top: 1.7rem; */
   }
   select{
-	width: 20vw;
+	width: 250px;
 	padding: 10px 10px 10px 30px;
 	outline: none;
 	border: none;
