@@ -25,9 +25,9 @@ const Home = () => {
             <span className="type"><span>Slay_CTF</span></span>
             <p>Calling all codebreakers and puzzle masters! Ready to test your wit? No experience needed, just bring your curiosity and problem-solving skills. Decipher cryptic clues, unlock hidden messages, and capture the flag! Unleash your inner cyber sleuth!
             </p>
-            <Link to='/events'>
+            <Link to='/login'>
               <button>
-                View Event
+                Register Now
               </button>
             </Link>
           </motion.div>
