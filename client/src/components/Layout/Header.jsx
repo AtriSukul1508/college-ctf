@@ -59,9 +59,9 @@ const handleClose = () => {
               <li>
                 <Link to={'/challenges'}>Challenges</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to={'/members'}>Members</Link>
-              </li>
+              </li>*/}
               {user? (<div className='profile_name'>
                         <p>{user.user.name}</p>
                         <button onClick={handleLogout} className='logout__btn' ><Logout fontSize='small' /> LogOut</button>
@@ -106,9 +106,9 @@ const handleClose = () => {
             <li>
               <Link to={'/contact'}>Contact</Link>
             </li>
-            <li>
+            {/*<li>
               <Link to={'/members'}>Members</Link>
-            </li>
+            </li>*/}
             <li>
                 <Link to={'/challenges'}>Challenges</Link>
               </li>
