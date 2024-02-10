@@ -1,0 +1,60 @@
+
+
+h1,p,li,a, span{
+    font-family: "IBM Plex Mono", monospace;
+    color: white;
+}
+.container{
+   
+    display: block;
+    position: relative;
+    /* background: url(bg.png);
+    background-size: cover; */
+}
+h1{
+    text-align: center;
+    font-weight: 800;
+    font-size: 46px;
+}
+#slay{
+    color: rgb(0, 0, 0);
+    background-color: red;
+}
+#present{
+    padding-left: 50%;
+    font-size: 18px;
+}
+.rule, .faq{
+    margin-bottom: 40px;
+
+}
+.ruleh, .faqh{
+    font-size: 24px;
+    padding: 30px 0;
+    color:#01fffb;
+}
+ul{
+    padding: 0px 40px;
+}
+#q, #r{
+    font-weight: 600;
+    list-style: none;
+    padding: 10px 30px;
+    background-image: url(
+"pacman.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px;
+}
+#a{
+    font-weight: 300;
+    padding: 0px 40px;
+}
+ul p a{
+    color:cyan;
+    text-decoration: none;
+    font-weight: 500;
+}
+#q{
+    color:greenyellow;
+}
