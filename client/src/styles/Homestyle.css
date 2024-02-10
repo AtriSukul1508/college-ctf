@@ -42,7 +42,7 @@
 }
 .type span {
   word-break: break-all;
-  height: 1.2em;
+  height: 1.5em;
   width:0%;
   overflow: hidden;
   animation:t 2s linear infinite alternate;
