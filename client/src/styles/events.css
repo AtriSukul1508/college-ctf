@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: 'Source Sans Pro',Helvetica Neue,Helvetica,Arial,sans-serif; 
     font-size: 16px;
     line-height: 1.75;
@@ -232,4 +232,96 @@ body {
       }
       
   }
+  */
+
+
+.design-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #1f1f1f; */
+  min-height: 100vh;
+  padding: 100px 0;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline {
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-content {
+  padding: 20px;
+  background: #2d2a2a;
  
+  color: white;
+  padding: 1.75rem;
+  transition: 0.4s ease;
+  overflow-wrap: break-word !important;
+  margin: 1rem;
+  margin-bottom: 20px;
+}
+#ghost{
+  width: 30px;
+  align-items: center;
+  padding-right: 7px;
+}
+.timeline-component {
+  margin: 0px 20px 20px 20px;
+}
+p{
+  padding-top: 5px;
+}
+h3{
+  display: inline-block;
+  padding: 0 4px;
+  color: cyan;
+  border-left: 4px solid #E94057;
+  font-size: 24px;
+}
+#date{
+  color: red;
+}
+.ghost{
+  display: flex;
+  align-items: center;
+}
+
+
+@media screen and (min-width: 768px) {
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+  }
+  .timeline-middle {
+    position: relative;
+    background: #E94057;
+    width: 3px;
+    height: 100%;
+  }
+  .main-middle {
+    opacity: 0;
+  }
+  .timeline-circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #E94057;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
