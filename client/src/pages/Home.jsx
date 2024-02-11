@@ -3,10 +3,24 @@ import Layout from '../components/Layout/Layout'
 import { Link } from 'react-router-dom'
 import Banner from '../assets/SLAY.png'
 import { motion } from "framer-motion"
+import Loading from '../components/Loading'
 import ParticlesBackground from '../components/Layout/ParticlesBackground'
+import { useEffect, useState } from 'react'
 
 import '../styles/Homestyle.css'
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+    
+  useEffect(() => {
+    // Simulate an API call
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <Layout>
       <ParticlesBackground/>
