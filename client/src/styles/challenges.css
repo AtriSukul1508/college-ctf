@@ -18,3 +18,18 @@
 span{
     color: gold;
 }
+
+
+
+@media only screen and (max-width: 750px) {
+    .chal{
+        font-size: 22px;
+    }
+    .launch-time{
+        font-size: 16px;
+    }
+    #days,#hours, #minutes, #seconds{
+        padding-right: 10px;
+        padding-bottom: 10px;
+    }
+  }
