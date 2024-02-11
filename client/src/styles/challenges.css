@@ -1,0 +1,20 @@
+.launch-time{
+    display: flex;
+    font-size: 40px;
+
+}
+.launch-time div{
+    flex-basis: 300px;
+    padding: 10px;
+    font-weight: 500;
+}
+.launch-time div p{
+    font-size: 40px;
+    margin-bottom: -14px;
+}
+#aaa{
+    color: cyan;
+}
+span{
+    color: gold;
+}
