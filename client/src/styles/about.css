@@ -40,8 +40,7 @@ ul{
     font-weight: 600;
     list-style: none;
     padding: 10px 30px;
-    background-image: url(
-"pacman.png");
+    background-image: url("pacman.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 20px;
@@ -58,3 +57,24 @@ ul p a{
 #q{
     color:greenyellow;
 }
+
+
+@media only screen and (max-width: 750px) {
+    .container {
+      margin-left: 0;
+      margin-right: 0;
+      
+    }
+    ul,#a{
+        padding: 0;
+    }
+    #r{
+        padding-right: 0;
+    }
+    #q, #r{
+        background-position: left;
+    }
+    #present{
+        padding: 0;
+    }
+  }

@@ -1,74 +1,97 @@
 import React from 'react'
 import Layout from '../components/Layout/Layout'
 import { Typography } from '@mui/material'
+import ParticlesBackground from '../components/Layout/ParticlesBackground'
 import '../styles/events.css'
+import Ghost from '../styles/ghost.png'
 const Events = () => {
   return (
     <Layout>
-           <section id="timeline">
-  
-  <div className="tl-item">
-    
-    <div className="tl-bg" ></div>
-    
-    <div className="tl-year">
-      <p className="f2 heading--sanSerif">Registration</p>
-    </div>
 
-    <div className="tl-content">
-      <h1>4TH-15TH FEBRUARY</h1>
-      <p/>
-    </div>
+    <ParticlesBackground/>
 
-  </div>
+      <div class="design-section">
+        <div class="timeline">
 
-  <div className="tl-item">
-    
-    <div className="tl-bg" ></div>
-    
-    <div className="tl-year">
-      <p>Workshop</p>
-    </div>
 
-    <div className="tl-content">
-      <h1 className="f3 text--accent ttu">17TH FEB - 10:30 AM</h1>
-      <p></p>
-    </div>
+          <div class="timeline-empty">
+          </div>
 
-  </div>
+          <div class="timeline-middle">
+            <div class="timeline-circle"></div>
+          </div>
+          <div class="timeline-component timeline-content">
+          <h3><img src={Ghost} id='ghost' />Registration</h3>
+            <p id='date'>4th Feb - 15th Feb</p>
+          </div>
+          <div class="timeline-component timeline-content">
+            <h3><img src={Ghost} id='ghost' />Inauguration</h3>
+            <p>10.00 AM - 10.30 AM</p><p id='date'> 17th Feb</p>
+          </div>
+          <div class="timeline-middle">
+            <div class="timeline-circle"></div>
+          </div>
+          <div class="timeline-empty">
+          </div>
 
-  <div className="tl-item">
-    
-    <div className="tl-bg" ></div>
-    
-    <div className="tl-year">
-      <p className=" heading--sanSerif">CTF</p>
-    </div>
+          <div class="timeline-empty">
+          </div>
 
-    <div className="tl-content">
-      <h1 className="f3 text--accent ttu">17TH FEB - 2:00 PM</h1>
-      <p></p>
-    </div>
+          <div class="timeline-middle">
+            <div class="timeline-circle"></div>
+          </div>
+          <div class=" timeline-component timeline-content">
+            <h3><img src={Ghost} id='ghost' />Workshop</h3>
+            <p>10.30 AM - 01.00 PM</p><p id='date'> 17th Feb</p>
+          </div>
 
-  </div>
+          <div class="timeline-component timeline-content">
+            <h3><img src={Ghost} id='ghost' />Lunch Break</h3>
+            <p>01.00 PM - 02.00 PM</p><p id='date'> 17th Feb</p>
+          </div>
+          <div class="timeline-middle">
+            <div class="timeline-circle"></div>
+          </div>
+          <div class="timeline-empty">
+          </div>
 
-  <div className="tl-item">
-    
-    <div className="tl-bg" ></div>
-    
-    <div className="tl-year">
-      <p className="f2 heading--sanSerif">Validictory</p>
-    </div>
+          <div class="timeline-empty">
+          </div>
 
-    <div className="tl-content">
-      <h1 className="f3 text--accent ttu">17TH FEB - 5:30 PM</h1>
-      <p></p>
-    </div>
+          <div class="timeline-middle">
+            <div class="timeline-circle"></div>
+          </div>
+          <div class=" timeline-component timeline-content">
+            <h3><img src={Ghost} id='ghost' />CTF</h3>
+            <p>02.00 PM - 04.30 PM</p><p id='date'>17th Feb</p>
+          </div>
 
-  </div>
-</section>
 
-</Layout>
+          <div class="timeline-component timeline-content">
+            <h3><img src={Ghost} id='ghost' />Result Annoucement & Validictory </h3>
+            <p>04.30 PM - 05.00 PM</p><p id='date'> 17th Feb</p>
+          </div>
+          <div class="timeline-middle">
+            <div class="timeline-circle"></div>
+          </div>
+          <div class="timeline-empty">
+          </div>
+
+          <div class="timeline-empty">
+          </div>
+          <div class="timeline-middle">
+            <div class="timeline-circle"></div>
+          </div>
+          <div class=" timeline-component timeline-content">
+            <h3><img src={Ghost} id='ghost' />Ending Ceremony</h3>
+            <p>05.00 PM - 05.30 PM</p><p id='date'>17th Feb</p>
+          </div>
+
+
+        </div>
+      </div>
+
+    </Layout>
   )
 }
 

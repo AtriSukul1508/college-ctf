@@ -38,7 +38,7 @@ export default function Challenges() {
             <ParticlesBackground />
             <Typography variant='h2' sx={{ display: "flex", justifyContent: "center", height: "750px", alignItems: "center", color: "green" }}>
                 <div>
-                    <h1><span id="aaa">Challenges</span> coming sooon!!</h1><br />
+                    <h1 className="chal"><span id="aaa">Challenges</span> coming sooon!!</h1><br />
 
                     <div class="launch-time">
                         <div>
