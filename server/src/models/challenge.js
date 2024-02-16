@@ -13,6 +13,10 @@ const challengeSchema = new mongoose.Schema(
         file: [{
             type: String,
         }],
+        solvedBy: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        }],
         input: {
             type: String,
             required: true
