@@ -25,6 +25,15 @@ const createChallenge = async (req, res) => {
     }
 }
 
+const getChallenges = async (req, res) => {
+    try {
+        const challenges = await Challenge.find().select("-input");
+        return res.status(200).json({ message: "success", challenges });
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+}
+
 const updateScore = async (req, res) => {
     try {
         // Get the parameters from the body
@@ -100,5 +109,6 @@ const updateScore = async (req, res) => {
 
 module.exports = {
     createChallenge,
+    getChallenges,
     updateScore
 }
