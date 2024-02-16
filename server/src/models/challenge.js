@@ -10,9 +10,9 @@ const challengeSchema = new mongoose.Schema(
             type: String,
             default: ""
         },
-        file: {
+        file: [{
             type: String,
-        },
+        }],
         input: {
             type: String,
             required: true

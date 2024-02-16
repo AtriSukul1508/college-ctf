@@ -50,6 +50,9 @@ const getLeaderboard = async (req, res) => {
                 $addFields: {
                     score: {
                         $sum: "$challenges.score"
+                    },
+                    challengeCount: {
+                        $size: "$challenges"
                     }
                 }
             },
