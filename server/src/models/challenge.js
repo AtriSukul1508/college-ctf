@@ -2,19 +2,30 @@ const mongoose = require("mongoose");
 
 const challengeSchema = new mongoose.Schema(
     {
+        name: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            default: ""
+        },
+        file: {
+            type: String,
+        },
         input: {
             type: String,
-            required: true,
+            required: true
         },
         score: {
             type: Number,
-            default: 0,
+            default: 0
         },
         category: {
             type: String
         }
-    },
-    { timestamps: true }
+    }
 );
 
-module.exports = mongoose.model("Challenge", challengeSchema);
+const Challenge = mongoose.models.Challenge || mongoose.model("Challenge", challengeSchema);
+module.exports = Challenge;

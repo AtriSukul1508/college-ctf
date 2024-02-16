@@ -33,8 +33,48 @@ const signupUser = async (req, res) => {
     }
 }
 
+// leaderboard
+const getLeaderboard = async (req, res) => {
+    try {
+        const leaderboard = await UserModel.aggregate([
+            {
+                $lookup: {
+                    from: "challenges",
+                    localField: "challenges",
+                    foreignField: "_id",
+                    as: "challenges"
+                }
+            },
+            {
+                $addFields: {
+                    score: {
+                        $sum: "$challenges.score"
+                    }
+                }
+            },
+            {
+                $match: {
+                    score: {
+                        $gt: 0
+                    }
+                }
+            },
+            {
+                $sort: {
+                    score: -1,
+                    finishTime: 1
+                }
+            }
+        ])
+
+        return res.status(200).json({ message: "success", leaderboard });
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+}
+
 // reset password controller 
 
 
 
-module.exports = { loginUser, signupUser, };
+module.exports = { loginUser, signupUser, getLeaderboard };

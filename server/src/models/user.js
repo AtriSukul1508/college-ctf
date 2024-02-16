@@ -35,10 +35,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         default:""
     },
-    // challenges: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref:'Challenge'
-    // },
+    challenges: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Challenge'
+    }],
+    finishTime: {
+        type: Date
+    },
     tokens: [{
         token: {
             type: String,
@@ -113,5 +116,5 @@ userSchema.methods.generateAuthToken = async function (_id, email) {
     }
 }
 
-
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.models.User || mongoose.model('User', userSchema);
+module.exports = User;
