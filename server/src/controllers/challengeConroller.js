@@ -66,9 +66,11 @@ const updateScore = async (req, res) => {
         // Add to users challenges
         user.challenges = user.challenges ? [...user.challenges, challengeId] : [challengeId];
         user.finishTime = Date.now();
+        challenge.solvedBy.push(userId);
 
         // Save changes on database
         await user.save();
+        await challenge.save();
 
         const responseData = await User.aggregate([
             {
