@@ -64,6 +64,14 @@ const getLeaderboard = async (req, res) => {
                     score: -1,
                     finishTime: 1
                 }
+            },
+            {
+                $project: {
+                    password: false,
+                    challenges: false,
+                    tokens: false,
+                    transactionid: false
+                }
             }
         ])
 
