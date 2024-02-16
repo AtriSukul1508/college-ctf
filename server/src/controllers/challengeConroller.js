@@ -28,7 +28,8 @@ const createChallenge = async (req, res) => {
 const updateScore = async (req, res) => {
     try {
         // Get the parameters from the body
-        const { challengeId, userId, answerInput } = req.body;
+        const { challengeId, answerInput } = req.body;
+        const userId = req.user._id;
 
         // Find user and challenge
         const user = await User.findById(userId);

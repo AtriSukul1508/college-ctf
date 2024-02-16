@@ -17,6 +17,7 @@ const loginUser = async (req, res) => {
     }
 }
 
+// signup controller
 const signupUser = async (req, res) => {
     const { name, email, phone, password,college,workshop, transactionid  } = req.body;
     try {
@@ -63,6 +64,14 @@ const getLeaderboard = async (req, res) => {
                 $sort: {
                     score: -1,
                     finishTime: 1
+                }
+            },
+            {
+                $project: {
+                    password: false,
+                    challenges: false,
+                    tokens: false,
+                    transactionid: false
                 }
             }
         ])
