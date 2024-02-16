@@ -17,6 +17,7 @@ const loginUser = async (req, res) => {
     }
 }
 
+// signup controller
 const signupUser = async (req, res) => {
     const { name, email, phone, password,college,workshop, transactionid  } = req.body;
     try {
