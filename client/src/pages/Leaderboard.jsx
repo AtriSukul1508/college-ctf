@@ -7,6 +7,7 @@ import '../styles/leaderboard.css'
 import Layout from "../components/Layout/Layout";
 import ParticlesBackground from "../components/Layout/ParticlesBackground";
 import { useAuthContext } from "../hooks/useAuthContext";
+import apiConfig from "../api.config";
 const Leaderboard = () => {
     //   const isModalOpen = useRecoilValue(modalState);
     const {user} = useAuthContext();
@@ -15,7 +16,7 @@ const Leaderboard = () => {
     console.log(data.data)
     React.useEffect(() => {
         const fetchLeaderboard = async () => {
-            const response = await fetch('http://localhost:8080/userapi/leaderboard', {
+            const response = await fetch(apiConfig.URL + '/userapi/leaderboard', {
                 method:"GET",
 
             })

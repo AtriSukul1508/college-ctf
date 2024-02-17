@@ -10,6 +10,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import { useAuthContext } from "../hooks/useAuthContext";
+import apiConfig from "../api.config";
 const ChallengeList = ({ challenge,index }) => {
     const [open, setOpen] = React.useState(false);
     const [challengeId,setChallengeId] = React.useState(challenge._id);
@@ -42,7 +43,7 @@ const ChallengeList = ({ challenge,index }) => {
     const validateFlag = async (event) => {
         event.preventDefault();
         try {
-            const resp = await fetch('http://localhost:8080/challengeapi/solution', {
+            const resp = await fetch(apiConfig.URL + '/challengeapi/solution', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${user.token}`,
