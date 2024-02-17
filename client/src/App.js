@@ -32,7 +32,7 @@ function App() {
           <Route path="/Contact" element={<Contact/>}/>
           <Route path="/members" element={<Members/>}/>
           {/* <Route path="/challenges" element={}/> */}
-          <Route path="/challenges" element={!user ? <Login /> : <Challenges/>}/>
+          <Route path="/challfs" element={!user ? <Login /> : <Challenges/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/events" element={<Events/>}/>
           <Route path="*" element={<Pagenotfound/>}/>
