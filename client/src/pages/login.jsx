@@ -103,8 +103,8 @@ export default function Login() {
                   <input type='text' autoComplete='off' className='input' placeholder='Enter your College Name' name='college' onChange={(e) => setCollege(e.target.value)} value={college} />
                 </div>
                 <div className="workshop_field info_field">
-                  <select required name='workshop' onChange={(e)=>setDropdownData(e.target.value)}>
-                    <option disabled selected>Which one do you want to choose ?</option>
+                  <select className='choose' required name='workshop' onChange={(e)=>setDropdownData(e.target.value)}>
+                    <option disabled selected > <div>CHOOSE MODE</div></option>
                     {['CTF Only','CTF+Workshop'].map((option, index) => {
                       return (
                         <option key={index}>
