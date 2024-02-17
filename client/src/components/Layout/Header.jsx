@@ -56,6 +56,12 @@ const handleClose = () => {
               <li>
                 <Link to={'/events'}>Events</Link>
               </li>
+              <li>
+                <Link to={'/challenges'}>Challenges</Link>
+              </li>
+              <li>
+                <Link to={'/leaderboard'}>LeaderBoard</Link>
+              </li>
               {/* <li>
                 <Link to={'/challenges'}>Challenges</Link>
               </li> */}
@@ -102,6 +108,12 @@ const handleClose = () => {
             </li>
             <li>
                 <Link to={'/events'}>Events</Link>
+              </li>
+            <li>
+                <Link to={'/challenges'}>Challenges</Link>
+              </li>
+              <li>
+                <Link to={'/leaderboard'}>LeaderBoard</Link>
               </li>
             <li>
               <Link to={'/contact'}>Contact</Link>
