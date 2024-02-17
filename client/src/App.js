@@ -17,6 +17,7 @@ function App() {
   const location = useLocation();
   const { user } = useAuthContext();
   // console.log(user.user.name)
+  console.log = () => {};
   return (
     <>
       {(location.pathname === '/login') ?

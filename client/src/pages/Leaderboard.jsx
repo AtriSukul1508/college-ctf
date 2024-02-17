@@ -32,7 +32,7 @@ const Leaderboard = () => {
 
             fetchLeaderboard()
         }
-    }, [])
+    }, [user])
     
     return (
         <>
