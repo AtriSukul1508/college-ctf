@@ -61,7 +61,7 @@
     padding: 0;
     font-size: 30px;
     font-weight: lighter;
-    color: white;
+
     font-family: 'VT323', monospace;
 }
 
@@ -127,4 +127,8 @@
         margin-bottom: 20px;
     }
 }
+.delay{
+	font-size:17px;
+	color: #f01c64;
+  }
 
