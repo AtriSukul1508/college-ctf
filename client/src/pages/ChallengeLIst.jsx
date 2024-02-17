@@ -53,7 +53,7 @@ const ChallengeList = ({ challenge,index }) => {
             })
             const data = await resp.json();
             if (!resp.ok) {
-
+                console.log('kichu ekta',resp)
                 // setEmptyFields(data.emptyFields)
             }
             if (resp.ok) {

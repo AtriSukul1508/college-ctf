@@ -20,12 +20,15 @@ export default function Challenges() {
         // setChallenge(dummyChallenges);
         const fetchChallenges = async () => {
             const response = await fetch(apiConfig.URL + '/challengeapi/challenge', {
-method:"GET"
+            method:"GET",
+            headers:{
+                'Authorization' : `Bearer ${user.token}`
+            }
             })
             const data = await response.json()
-
+            console.log(data)
             if (response.ok) {
-                // console.log(data.challenges);
+                console.log(data.challenges);
                 setChallenge(data.challenges);
                 // console.log(challenges);
             }

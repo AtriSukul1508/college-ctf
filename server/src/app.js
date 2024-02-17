@@ -7,11 +7,11 @@ const PORT = process.env.PORT || 8080;
 const cookieParser = require('cookie-parser');
 const userRouter = require('./routes/userRouter');
 const challengeRouter = require('./routes/challengeRouter');
-app.use(cors())
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     next();
 });
+app.use(cors())
 
 require('./db/connection');
 app.use(express.urlencoded({ extended: false }));
