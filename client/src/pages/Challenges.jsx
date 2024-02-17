@@ -1,67 +1,63 @@
-import { Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import ParticlesBackground from "../components/Layout/ParticlesBackground";
+import { useAuthContext } from "../hooks/useAuthContext";
 import '../styles/challenges.css'
+import ChallengeList from "./ChallengeLIst";
+
+
 
 
 export default function Challenges() {
 
-    var countDownDate = new Date("Feb 17, 2024 14:00:00").getTime();
-    var x = setInterval(function () {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
+    // var countDownDate = new Date("Feb 17, 2024 14:00:00").getTime();
+    const { user } = useAuthContext();
+    const [challenges,setChallenge] = useState([])
+    const Categories = ['crypto','forensics','osint','pwn','rev','sanity']
 
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24))
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000)
+    useEffect(() => {
+        // setChallenge(dummyChallenges);
+        const fetchChallenges = async () => {
+            const response = await fetch('http://localhost:8080/challengeapi/challenge', {
+method:"GET"
+            })
+            const data = await response.json()
 
-        document.getElementById("days").innerHTML = days
-        document.getElementById("hours").innerHTML = hours
-        document.getElementById("minutes").innerHTML = minutes
-        document.getElementById("seconds").innerHTML = seconds
-
-
-        if (distance < 0) {
-            clearInterval(x)
-            document.getElementById("days").innerHTML = "00"
-            document.getElementById("hours").innerHTML = "00"
-            document.getElementById("minutes").innerHTML = "00"
-            document.getElementById("seconds").innerHTML = "00"
+            if (response.ok) {
+                // console.log(data.challenges);
+                setChallenge(data.challenges);
+                // console.log(challenges);
+            }
         }
-
-    }, 1000)
-
+        // if(user){
+            fetchChallenges();
+        // }
+    }, [])
 
     return (
         <Layout>
             <ParticlesBackground />
-            <Typography variant='h2' sx={{ display: "flex", justifyContent: "center", height: "750px", alignItems: "center", color: "green" }}>
-                <div>
-                    <h1 className="chal"><span id="aaa">Challenges</span> coming sooon!!</h1><br />
-
-                    <div class="launch-time">
-                        <div>
-                            <p id="days">00</p>
-                            <span>Days</span>
-                        </div>
-                        <div>
-                            <p id="hours">00</p>
-                            <span>Hours</span>
-                        </div>
-                        <div>
-
-                            <p id="minutes">00</p>
-                            <span>Minutes</span>
-                        </div>
-                        <div>
-
-                            <p id="seconds">00</p>
-                            <span>Seconds</span>
-                        </div>
-                    </div>
+            <section className="my-4">
+            <div className="flex justify-center">
+                             <h1 className="w-fit my-1.5 pt-0 px-2 pb-2 font-curlfont text-[2.5rem] font-bold text-white tracking-[4px] rounded-lg backdrop-blur-sm shadow-[0_0_4px_rgba(50,69,107,0.5)]">
+                                Challenges
+                            </h1>
+            </div>
+                {/* <h1 className="font-curlfont my-4 text-[3rem]">Challenges</h1> */}
+                <div className="mx-auto w-2/3 flex flex-col justify-center gap-[2rem]">
+                    {Categories.map((category,ind)=>{
+                        {/* return (<ChallengeList challenges={challenges} category={category} />) */}
+                        return (
+                            <>
+                            <h2 className="text-white my-2">{category}</h2>
+                            <ul className="flex justify-start items-center gap-4 flex-wrap">
+                            {challenges.filter((challenge) => challenge.category === category).map((chal,inde)=>{
+                                return (<ChallengeList challenge={chal} index={inde} />)
+                            })}
+                        </ul></>)
+                    })}
                 </div>
-            </Typography>
+            </section>
         </Layout>
     )
 

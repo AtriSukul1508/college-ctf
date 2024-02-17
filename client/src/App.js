@@ -9,8 +9,10 @@ import Members from './pages/Members'
 import Challenges from './pages/Challenges'
 import Login from './pages/login'
 import Events from './pages/Events'
+import Table from './pages/Table'
 import { useAuthContext } from './hooks/useAuthContext'
 import Header from './components/Layout/Header'
+import Leaderboard from './pages/Leaderboard'
 function App() {
   const location = useLocation();
   const { user } = useAuthContext();
@@ -25,9 +27,11 @@ function App() {
           <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/about" element={<About/>}/>
+          <Route path="/leaderboard" element={<Leaderboard/>} />
           <Route path="/Contact" element={<Contact/>}/>
           <Route path="/members" element={<Members/>}/>
-          <Route path="/challenges" element={<Challenges/>}/>
+          {/* <Route path="/challenges" element={}/> */}
+          <Route path="/cha" element={!user ? <Login /> : <Challenges/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/events" element={<Events/>}/>
           <Route path="*" element={<Pagenotfound/>}/>

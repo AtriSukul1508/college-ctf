@@ -38,6 +38,7 @@ const updateScore = async (req, res) => {
     try {
         // Get the parameters from the body
         const { challengeId, answerInput } = req.body;
+        console.log(req.body);
         const userId = req.user._id;
 
         // Find user and challenge

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.leaderboard{
+    font-weight: 600;
+    list-style: none;
+    padding: 10px 30px;
+    background-image: rgba(70, 68, 68, 0.795);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px;
+}
