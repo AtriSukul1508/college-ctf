@@ -28,11 +28,8 @@ function App() {
           <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/about" element={<About/>}/>
-          <Route path="/leaderboard" element={<Leaderboard/>} />
           <Route path="/Contact" element={<Contact/>}/>
           <Route path="/members" element={<Members/>}/>
-          {/* <Route path="/challenges" element={}/> */}
-          <Route path="/challfs" element={!user ? <Login /> : <Challenges/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/events" element={<Events/>}/>
           <Route path="*" element={<Pagenotfound/>}/>
