@@ -4,6 +4,7 @@ import ParticlesBackground from "../components/Layout/ParticlesBackground";
 import { useAuthContext } from "../hooks/useAuthContext";
 import '../styles/challenges.css'
 import ChallengeList from "./ChallengeLIst";
+import apiConfig from "../api.config";
 
 
 
@@ -13,12 +14,12 @@ export default function Challenges() {
     // var countDownDate = new Date("Feb 17, 2024 14:00:00").getTime();
     const { user } = useAuthContext();
     const [challenges,setChallenge] = useState([])
-    const Categories = ['crypto','forensics','osint','pwn','rev','sanity']
+    const Categories = ['crypto','forensics','osint','pwn','rev','sanity','web']
 
     useEffect(() => {
         // setChallenge(dummyChallenges);
         const fetchChallenges = async () => {
-            const response = await fetch('http://localhost:8080/challengeapi/challenge', {
+            const response = await fetch(apiConfig.URL + '/challengeapi/challenge', {
 method:"GET"
             })
             const data = await response.json()
